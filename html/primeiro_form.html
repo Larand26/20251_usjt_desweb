@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulário</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      form {
+        min-height: 500px;
+        width: 400px;
+        border-radius: 20px;
+        background-color: rgb(65, 18, 83);
+        color: #fff;
+        text-align: center;
+        box-shadow: 5px 10px 20px #1c1c1c;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+      }
+      form input {
+        width: 50%;
+        height: 20px;
+        padding: 5px;
+        border-radius: 30px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h1>Formulário</h1>
+      <label for="inp-primeiroNome">nome: </label>
+      <input id="inp-primeiroNome" type="text" />
+      <br />
+      <label for="inp-primeiroSobreNome">sobrenome: </label>
+      <input id="inp-primeiroSobreNome" type="text" />
+      <br />
+      <label for="inp-email">E-mail: </label>
+      <input id="inp-email" type="text" />
+      <br />
+      <label for="inp-telefone">Telefone: </label>
+      <input id="inp-telefone" type="tel" />
+      <br />
+      <button id="submit" type="button">Enviar</button>
+    </form>
+    <script>
+      const inpTelefone = document.querySelector("#inp-telefone");
+      const btn = document.querySelector("#submit");
+
+      btn.addEventListener("click", () => {
+        const telefone = inpTelefone.value;
+
+        if (telefone) {
+          if (telefone.match(/[^0-9+\-\(\)\s]/g)) {
+            alert("Telefone inválido");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
